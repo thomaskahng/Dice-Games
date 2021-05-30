@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".YahtzeeFragment">
+
+    <data>
+        <!-- Add layout variable and type for view of corresponding kt file (modified) -->
+        <variable
+            name="viewModel"
+            type="com.example.cupcake.games.GameFunctions" />
+
+        <!-- Add layout variable and type for view of FlavorFragment(modified) -->
+        <variable
+            name="yahtzeeFragment"
+            type="com.example.cupcake.YahtzeeFragment" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/side_margin">
+
+            <!-- Roll dice -->
+            <Button
+                android:id="@+id/button"
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="340dp"
+                android:onClick="@{() -> yahtzeeFragment.playGame()}"
+                android:text="@string/roll"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Cancel game -->
+            <Button
+                android:id="@+id/cancel_button"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="450dp"
+                android:onClick="@{() -> yahtzeeFragment.quit()}"
+                android:text="@string/cancel"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- 1st die -->
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="134dp"
+                android:layout_height="134dp"
+                android:layout_marginStart="35dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="260dp"
+                android:contentDescription="@string/image1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.425"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@drawable/dice_1" />
+
+            <!-- 2nd die -->
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="134dp"
+                android:layout_height="134dp"
+                android:layout_marginTop="260dp"
+                android:layout_marginEnd="120dp"
+                android:layout_marginRight="120dp"
+                android:contentDescription="@string/image2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@drawable/dice_1" />
+
+            <!-- 3rd die -->
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="134dp"
+                android:layout_height="134dp"
+                android:layout_marginTop="260dp"
+                android:contentDescription="@string/image3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@drawable/dice_1" />
+
+            <!-- 4th die -->
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="134dp"
+                android:layout_height="134dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="120dp"
+                android:layout_marginEnd="200dp"
+                android:contentDescription="@string/image4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@drawable/dice_1" />
+
+            <!-- 5th die -->
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="134dp"
+                android:layout_height="134dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="120dp"
+                android:layout_marginEnd="45dp"
+                android:layout_marginRight="45dp"
+                android:contentDescription="@string/image5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView4"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@drawable/dice_1" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

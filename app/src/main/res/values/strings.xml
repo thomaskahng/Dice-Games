@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DiceGames</string>
+    <string name="roll">Roll Dice</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="image1">1</string>
+    <string name="image2">2</string>
+    <string name="image3">3</string>
+    <string name="image4">4</string>
+    <string name="image5">5</string>
+    <string name="image6">6</string>
+
+    <string name="congratulations">Congratulations!</string>
+    <string name="sorry">Sorry</string>
+    <string name="you_won">You won!</string>
+    <string name="you_lost">You lost</string>
+
+    <string name="play_again">Play Again</string>
+    <string name="exit">Exit</string>
+
+    <string name="dice_games">Dice Games!</string>
+    <string name="play_lucky_number">Lucky Number</string>
+    <string name="play_doub_or_none">Double or Nothing</string>
+    <string name="play_yahtzee">Yahtzee!</string>
+    <string name="show_reults">Results</string>
+
+    <string name="lucky_number">Lucky Number</string>
+    <string name="double_or_nothing">Double or Nothing</string>
+    <string name="yahtzee">Yahtzee</string>
+
+    <string name="send">Send</string>
+    <string name="game_played">Game Played:</string>
+    <string name="win_or_lose">Result:</string>
+
+    <string name="new_game_play">New Game Play</string>
+    <string name="game_details"> Date: %1$s \n Game Played: %2$s \n Result: %3$s \n
+     \n Thank you!</string>
+
+    <string name="first_roll">First Roll</string>
+    <string name="lucky_roll">Your lucky number is: %d</string>
+    <string name="ok">OK</string>
+
+    <string name="date">Date:</string>
+</resources>

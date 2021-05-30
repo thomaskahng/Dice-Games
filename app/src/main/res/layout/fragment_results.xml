@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ResultsFragment">
+
+    <data>
+        <!-- Add layout variable and type for view of corresponding kt file -->
+        <variable
+            name="viewModel"
+            type="com.example.cupcake.games.GameFunctions" />
+
+        <!-- Add layout variable and type for view of FlavorFragment -->
+        <variable
+            name="resultsFragment"
+            type="com.example.cupcake.ResultsFragment" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/side_margin">
+
+            <!-- Group the order details into a single ViewGroup and set focusable = true,
+                 so all fields will be read aloud together by the accessibility service -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:orientation="vertical">
+
+                <!-- Show in view the date of play -->
+                <TextView
+                    android:id="@+id/date_label"
+                    style="@style/Widget.Cupcake.TextView.Label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/date" />
+
+                <TextView
+                    android:id="@+id/date"
+                    android:text="@{viewModel.dateOptions[0]}"
+
+                    style="@style/Widget.Cupcake.TextView.OrderSummary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/order_summary_margin"
+                    tools:text="Sunday" />
+
+                <!-- Divider for spacing -->
+                <View
+                    android:id="@+id/divider1"
+                    style="@style/Widget.Cupcake.Divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/side_margin"
+                    android:layout_marginBottom="@dimen/margin_between_elements" />
+
+                <!-- Show the game played -->
+                <TextView
+                    android:id="@+id/game_label"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/game_played"
+                    android:textAllCaps="true"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/game"
+                    android:text="@{viewModel.game}"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/order_summary_margin"
+                    tools:text="Double or Nothing" />
+
+                <!-- Divider for spacing -->
+                <View
+                    android:id="@+id/divider2"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/side_margin"
+                    android:layout_marginBottom="@dimen/side_margin" />
+
+                <!-- Show game result -->
+                <TextView
+                    android:id="@+id/result_label"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/win_or_lose"
+                    android:textAllCaps="true"/>
+
+                <TextView
+                    android:id="@+id/result"
+                    android:text="@{viewModel.result}"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/order_summary_margin"
+                    tools:text="You Lose" />
+
+                <!-- Divider for spacing -->
+                <View
+                    android:id="@+id/divider3"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/side_margin"
+                    android:layout_marginBottom="@dimen/side_margin" />
+            </LinearLayout>
+
+            <!-- When button clicked, SummaryFragment sends the order -->
+            <Button
+                android:id="@+id/send_button"
+                android:onClick="@{() -> resultsFragment.sendResults()}"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/side_margin"
+                android:text="@string/send" />
+
+            <!-- When button clicked, go back to StartFragment (placed below send_button) (modified) -->
+            <!-- Outlines style to appear less prominent to next button -->
+            <Button
+                android:id="@+id/cancel_button"
+                android:onClick="@{() -> resultsFragment.quit()}"
+
+                style="?attr/materialButtonOutlinedStyle"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_elements"
+                android:text="@string/cancel" />
+
+        </LinearLayout>
+    </ScrollView>
+</layout>
